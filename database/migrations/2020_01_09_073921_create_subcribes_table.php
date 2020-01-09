@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class CreateSubcribesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('subcribes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('post_id')->nullable();
-            $table->string('content')->nullable();
-            $table->bigInteger('parent_id')->nullable();
-            $table->tinyInteger('isApprove')->default(1);
-            $table->bigInteger('user_id')->nullable();
+            $table->string('email')->nullable();
+            $table->tinyInteger('isSubcribe')->default(1);
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('subcribes');
     }
 }

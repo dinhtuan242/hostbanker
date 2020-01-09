@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model
+class Subcribe extends Model
 {
     protected $fillable = [
-        'option_name',
-        'value',
+        'email',
+        'isSubcribe',
     ];
 }
